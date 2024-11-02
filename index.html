@@ -8,9 +8,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bailey's Picks - Fetching your next must-watch movie</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Bailey's Picks</h1>
+    <div class="main">
+        <div class="content">
+            <div class="top-nav">
+                <div class="top-nav-left">
+                    <img src="/images/bulldogLogo.png" class="logo">
+                    <div class="tagLine">
+                        <h1 class="header">Bailey's Picks</h1>
+                        <p>Fetching your next must-watch movie</p>
+                    </div>                
+                </div>
+                <div class="top-nav-right">
+                    <p id="watchlist-el" class="watchlist-el">My watchlist</p>
+                </div>
+            </div>
+            <div class="search-container">
+                <form>
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        <input type="text" placeholder="Search.." name="search">
+                    </div>
+                    
+                    <button type="submit">Fetch</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
     
     <script src="/main.js"></script>
 </body>
