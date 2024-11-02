@@ -9,15 +9,13 @@ body {
     background-color: #333;
     height: 100vh;
     color: #fff;
-    font-family: "Inter", sans-serif; 
-    border: 1px red solid;   
+    font-family: "Inter", sans-serif;
 }
 
 .main {
     background: #fff;
     height: 100vh;
-    max-width: 55em;
-    border: 1px red solid;
+    max-width: 60em;
 }
 
 /* === universal === */
@@ -53,7 +51,7 @@ p { font-size: 1.5em; }
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8em;
+    margin-top: 8em;   
 }
 
 .top-nav-left {
@@ -63,7 +61,7 @@ p { font-size: 1.5em; }
         "... ... ..."
         "logo tag tag"
         "logo tag tag";
-    margin-right: 2em;
+    
 }
 
 .logo {
@@ -96,6 +94,24 @@ p { font-size: 1.5em; }
     border-radius: 6px;
 }
 
+.search-container form {
+    max-width: 49em;
+}
+
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+
+.search-box i {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+}
+
 .content input[type=text] {
     padding: 0.5em 3.35em;
     font-size: 1.7em;
@@ -113,23 +129,78 @@ p { font-size: 1.5em; }
     font-size: 1.7em;
     border: none;
     cursor: pointer;
-  }
+}
 
 .content .search-container button:hover {
     background: #ccc;
     cursor: pointer;
 }
 
-.search-box {
-    position: relative;
-    display: inline-block;
+/* === cards ===*/
+.cards-display {
+    color: #333;
+    margin-top: 3em;
 }
 
-.search-box i {
-    position: absolute;
-    top: 50%;
-    left: 1em;
-    transform: translateY(-50%);
-    color: #aaa;
-    pointer-events: none;
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.movie-detail-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;   
+}
+
+.movie-detail-middle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* .movie-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+} */
+.moviePoster {
+    width: 100px;
+   
+}
+
+
+
+@media(max-width: 510px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    p { font-size: 1.4em; }
+
+    .content .search-container {
+        width: 100vw;
+        left: 0.8em;
+
+    }
+
+    .content input[type=text] {
+        padding: 0.5em 1.3em;
+    }
+
+    .content .search-container button {
+        padding: 1.5em 1.8em;
+    }
+
+    .top-nav {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+
+    .content input[type=text] {
+        padding-left: 2.5em;
+    }
 }
