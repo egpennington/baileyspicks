@@ -280,14 +280,17 @@ a:hover::after {
 
 .movie-detail-middle .add-movie,
 .movie-detail-middle .delete-movie {
+    background: none;
+    border: none;
     color:#111827;
     font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
 }
 
 .movie-detail-middle .add-movie:hover,
 .movie-detail-middle .delete-movie:hover {
     opacity: 0.65;
-    cursor: pointer;
 }
 
 .movie-detail-bottom p {
