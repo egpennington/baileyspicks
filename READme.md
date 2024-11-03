@@ -1,73 +1,67 @@
-# Bailey's Palette - Unleash Your Colors
+# Bailey's Picks - Movie Search and Watchlist App
 
-Welcome to Bailey's Palette! Unleash your creativity and explore a vibrant world of colors with this interactive web application. Based on Scrimba's bootcamp solo project from Module 8, this app is built using HTML, CSS, JavaScript, and APIs.
-- Live site (https://baileyspalette.netlify.app/)
-- Scrimba fork (https://v1.scrimba.com/scrim/cod5548758739747f1d9e2502)
+**Bailey's Picks** is a simple web application that allows users to search for movies, add selected titles to a personalized watchlist, and view their saved watchlist. The app leverages the [OMDb API](https://www.omdbapi.com/) to retrieve movie data and uses Local Storage to persist user watchlists across sessions.
 
-## Table of Contents
-- [Features](#features)
-- [Definitions](#schemes)
-- [Stretch](#stretch)
-- [Installation](#installation)
-- [Usage](#usage)
-- [APIs Used](#apis-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+## Project Overview
+
+This app is part of the **Scrimba Bootcamp** solo project for **Module 8**. It is built with **HTML**, **CSS**, and **JavaScript** and demonstrates how to work with APIs and Local Storage.
 
 ## Features
-- 🎨 **Color Picker**: Choose from a wide range of colors and see the RGB, HEX, and HSL values.
-- 🌈 **Palette Generator**: Generate random color palettes for inspiration using [The Color API](https://www.thecolorapi.com).
-- 🔍 **Scheme Selector**: Select from various color schemes like "monochrome", "monochrome-dark", "monochrome-light", "analogic", "complement", "analogic-complement", and "triad".
 
-## Definition - color scheme definitions
-- **Monochrome:** Uses variations in lightness and saturation of a single color.
-- **Monochrome-dark:** Focuses on darker shades and tones of a single color.
-- **Monochrome-light:** Emphasizes lighter tints and tones of a single color.
-- **Analogic:** Combines colors that are next to each other on the color wheel.
-- **Complement:** Uses colors that are opposite each other on the color wheel.
-- **Analogic-complement:** Combines colors that are adjacent on the color wheel with a - color that is directly opposite one of them.
-- **Triad:** Involves three colors that are evenly spaced around the color wheel.
-- **Quad:**Uses four colors that are evenly spaced around the color wheel.- 
+- **Movie Search (index.html)**: Users can search for movies by title using the OMDb API, which displays the results dynamically.
+- **Add to Watchlist**: Each movie result includes an "Add to Watchlist" button that allows users to save the movie to their watchlist in Local Storage.
+- **Watchlist (watchlist.html)**: Users can view their saved movies on a separate watchlist page, displaying data pulled from Local Storage.
 
-## Stretch - stretch goals for next updates
-- 🖌️ **Save Palettes**: Save your favorite color palettes for later use.
-- 💾 **Local Storage**: Your saved palettes are stored locally for easy access.
+## Pages
 
-## Installation
-To get started, clone the repository and open the project folder:
-```sh
-git clone https://github.com/egpennington/baileyspalette
-cd baileys-palette
+### `index.html`
+The main search page, where users can:
+- Enter a movie title in the search bar.
+- See a list of movies that match their search query, pulled from the OMDb API.
+- Click the "Add to Watchlist" button for a movie to save it to Local Storage.
 
-## Usage
-1. **Open the app**: Open `index.html` in your preferred web browser.
-2. **Pick a color**: Use the color picker to choose a color.
-3. **Select a scheme**: Click on a scheme option like "monochrome", "analogic", etc.
-4. **Generate palettes**: Click the "Generate Palette" button to get your color scheme.
+### `watchlist.html`
+The watchlist page, where users can:
+- View all saved movies that they previously added from the search page.
+- Remove movies from the watchlist as needed.
 
--- coming soon 
-5. **Save palettes**: Click the "Save Palette" button to keep your favorite color combinations.
+## Technologies Used
 
-## APIs Used
-This app utilizes [The Color API](https://www.thecolorapi.com) to fetch color schemes and generate palettes based on user selections.
+- **HTML**: Structure of the web pages.
+- **CSS**: Styling for the user interface.
+- **JavaScript**: Functionality for API calls, data storage, and page interactivity.
+- **OMDb API**: Provides movie data based on user search input.
+- **Local Storage**: Stores the watchlist data locally for persistence across sessions.
 
-## Contributing
-Contributions are welcome! Please fork this repository, create a new branch, and submit a pull request.
+## Setup Instructions
 
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-branch`.
-3. Make your changes.
-4. Commit your changes: `git commit -m 'Add some feature'`.
-5. Push to the branch: `git push origin feature-branch`.
-6. Open a pull request.
+1. Clone this repository to your local machine.
+2. Open `index.html` in your browser to use the search feature.
+3. Use the search function and add movies to your watchlist.
+4. Open `watchlist.html` to view and manage your watchlist.
+
+## OMDb API
+
+This app uses the [OMDb API](https://www.omdbapi.com/) to retrieve movie data. You may need an API key from OMDb to enable the search functionality. Replace `YOUR_API_KEY` in the JavaScript code with your actual key.
+
+## How to Use
+
+1. **Search for a Movie**:
+   - Go to `index.html` and enter a movie title in the search bar.
+   - Results will display movies matching the title you entered.
+
+2. **Add to Watchlist**:
+   - Click the "Add to Watchlist" button on any movie you want to save.
+   - The movie will be added to Local Storage and will appear on the `watchlist.html` page.
+
+3. **View Your Watchlist**:
+   - Go to `watchlist.html` to view your saved movies.
+   - Here, you can see all the movies you added to your watchlist.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
-Developed by pennington programming. For any questions or suggestions, feel free to reach out.
+This project is a practice assignment and is for educational purposes only as part of the Scrimba Bootcamp.
 
-- [GitHub](https://github.com/egpennington)
-- [Email](mailto:egpennington@hotmail.com)
-- [Discord](emmettPenn23)
+---
+
+Happy movie hunting with **Bailey's Picks**! "Fetching your next must-watch."
