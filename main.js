@@ -1,15 +1,16 @@
 // 288650c8
 const apiKey = `288650c8`
-let fetchTitle = '';
+let fetchTitle = ''
 console.log("Bailey, fetch!")
 
 document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
+    document.querySelector('.cards-display').classList.add('search-active')
     fetchTitle = document.getElementById("search-name").value;
     console.log("Search term:", fetchTitle);
     getMovieData(fetchTitle)
     this.reset()
-});
+})
 
 async function getMovieData(title) {
     const res = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${title}`)
