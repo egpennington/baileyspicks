@@ -7,14 +7,13 @@
 
 body {
     background-color: #333;
-    height: 100vh;
     color: #fff;
     font-family: "Inter", sans-serif;
 }
 
 .main {
     background: #fff;
-    height: 100vh;
+    /* height: 100vh; */
     max-width: 60em;
 }
 
@@ -71,10 +70,13 @@ a:hover::after {
 
 /* === content and Nav area === */
 .content {
-    height: 21em;
+    height: 22em;
+    width: 60em;
     border: #fff solid 1px;
     position: relative;
     z-index: 1;
+    position: fixed;
+    top: 0; 
 }
 
 .content::before {
@@ -182,7 +184,9 @@ a:hover::after {
 /* === cards ===*/
 .cards-display {
     color: #333;
+    background: #fff;
     margin-top: 3em;
+    padding-top: 22em;
 }
 
 .card-info {
