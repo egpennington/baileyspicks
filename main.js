@@ -5,7 +5,9 @@ console.log("Bailey, fetch!")
 
 document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
-    document.querySelector('.cards-display').classList.add('search-active')
+    const cardsDisplay = document.querySelector('.cards-display')
+    cardsDisplay.innerHTML = ''    
+    cardsDisplay.classList.add('search-active')    
     fetchTitle = document.getElementById("search-name").value;
     console.log("Search term:", fetchTitle);
     getMovieData(fetchTitle)
