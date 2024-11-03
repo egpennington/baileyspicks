@@ -26,7 +26,7 @@ h1 {
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #000;
 }
 
@@ -213,11 +213,20 @@ a:hover::after {
 }
 
 .rating {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-    gap: 0.3rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr 1fr 1fr;
+    grid-template-areas: 
+        "title star tomo tomo tomo";
+    gap: 20px;
 }
+
+.title { grid-area: title;}
+.star { grid-area: star; }
+.tomo { 
+    grid-area: tomo;
+}
+
+
 
 .movie-detail-middle {
     display: flex;
