@@ -205,11 +205,14 @@ a:hover::after {
     align-items: center;
     justify-content:flex-start;
     text-align: center; 
-    gap: 4rem; 
+    gap: 1rem; 
 }
 
 .movie-detail-top h3 {
     margin: 0;
+    flex: 1;
+    white-space: normal;
+    text-align: left;
 }
 
 .rating {
