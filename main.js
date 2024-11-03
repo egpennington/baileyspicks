@@ -20,7 +20,6 @@ async function getMovieData(title) {
     data.Search.forEach(async (movie) => {
         const movieDetail = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
         const movieData = await movieDetail.json()
-        console.log(movieData)
         document.getElementById("cards-display").innerHTML += `
             <div class="card-info">
                 <img class="moviePoster" src="${movieData.Poster}" alt="movie poster">
@@ -41,5 +40,9 @@ async function getMovieData(title) {
                     </div>               
             </div>
             `
+    })
+
+    document.getElementById("add-movie").addEventListener("click", () => {
+        console.log("movie added")
     })
 }
