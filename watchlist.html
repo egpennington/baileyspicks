@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="scrimba's solo project, movie watchlist, omdbapi.com api">
-    <meta name="keywords" content="HTML, CSS, JavaScript, api, omdbapi.com, scrimba, movie watchlist, movie database">
+    <meta name="keywords" content="HTML, CSS, JavaScript, api, omdbapi.com, scrimba, movie watchlist, movie database, movie watchlist">
     <meta name="author" content="Emmett Pennington, pennington programming">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bailey's Picks - Fetching your next must-watch movie</title>
+    <title>Bailey's Picks - Watchlist</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -24,23 +24,13 @@
                 <div class="top-nav-left">
                     <img src="/images/bulldogLogo.png" class="logo">
                     <div class="tagLine">
-                        <h1 class="header">Bailey's Picks</h1>
-                        <p>Fetching your next must-watch movie</p>
+                        <h1 class="header">My Watchlist</h1>
                     </div>                
                 </div>
                 <div class="top-nav-right">
-                    <a href="watchlist.html" id="watchlist-el" class="watchlist-el">My watchlist</a>
+                    <a href="/index.html" id="watchlist-el" class="watchlist-el">Search for Movies</a>
                 </div>
-            </div>
-            <div class="search-container">
-                <form>
-                    <div class="search-box">
-                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                        <input type="text" placeholder="Search.." name="search" id="search-name">
-                    </div>                    
-                    <button type="submit">Fetch</button>
-                </form>
-            </div>
+            </div>            
         </div>
         <div class="cards-display">
             <div id="card-info" class="card-info">
@@ -50,12 +40,12 @@
                         <h3>Start-up</h3>
                         <div class="rating">
                             <p><i class="fa-solid fa-star"></i> 8.7</p>
-                        </div>                                               
+                        </div>                  
                     </div>
                     <div class="movie-detail-middle">
                         <p id="length">117m</p>
                         <p id="genre">Action,drama,sci-fi</p>
-                        <p id="add-movie" class="add-movie"><i class="fa-solid fa-circle-plus fa-sm"></i> watchlist</p>
+                        <p id="delete-movie" class="delete-movie"><i class="fa-solid fa-circle-minus fa-sm"></i> Remove</p>
                     </div>
                     <div class="movie-detail-bottom">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt repellendus facilis impedit similique modi neque alias excepturi laboriosam tenetur temporibus!</p>
@@ -67,12 +57,15 @@
                 <img class="moviePoster" src="/images/poster.jpg" alt="movie poster">
                 <div class="movie-detail">
                     <div class="movie-detail-top">
-                        <h3>Blade Runner</h3><span>* 8.7</span>                        
+                        <h3>Start-up</h3>
+                        <div class="rating">
+                            <p><i class="fa-solid fa-star"></i> 8.7</p>
+                        </div>                  
                     </div>
                     <div class="movie-detail-middle">
                         <p id="length">117m</p>
                         <p id="genre">Action,drama,sci-fi</p>
-                        <p id="add-movie" class="add-movie"><i class="fa-solid fa-circle-plus fa-sm"></i> watchlist</p>
+                        <p id="delete-movie" class="delete-movie"><i class="fa-solid fa-circle-minus fa-sm"></i> Remove</p>
                     </div>
                     <div class="movie-detail-bottom">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt repellendus facilis impedit similique modi neque alias excepturi laboriosam tenetur temporibus!</p>
@@ -84,12 +77,15 @@
                 <img class="moviePoster" src="/images/poster2.jpg" alt="movie poster">
                 <div class="movie-detail">
                     <div class="movie-detail-top">
-                        <h3>King the Land</h3><span>* 8.7</span>                        
+                        <h3>Start-up</h3>
+                        <div class="rating">
+                            <p><i class="fa-solid fa-star"></i> 8.7</p>
+                        </div>                  
                     </div>
                     <div class="movie-detail-middle">
                         <p id="length">117m</p>
                         <p id="genre">Action,drama,sci-fi</p>
-                        <p id="add-movie" class="add-movie"><i class="fa-solid fa-circle-plus fa-sm"></i> watchlist</p>
+                        <p id="delete-movie" class="delete-movie"><i class="fa-solid fa-circle-minus fa-sm"></i> Remove</p>
                     </div>
                     <div class="movie-detail-bottom">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt repellendus facilis impedit similique modi neque alias excepturi laboriosam tenetur temporibus!</p>
@@ -97,11 +93,8 @@
                 </div>                
             </div>
         </div>
-    </div>
-    
-    
-    
-    
+    </div>   
     <script src="/main.js"></script>
 </body>
 </html>
+

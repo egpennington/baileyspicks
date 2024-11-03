@@ -18,13 +18,56 @@ body {
     max-width: 60em;
 }
 
-/* === universal === */
+/* === universal styles === */
 h1 { 
     font-size: 3.2em;
     font-weight: 800;
-    border-top: 1px #fff solid;
+    border-bottom: 1px #fff solid;
 }
+
+h3 {
+    font-size: 1.8rem;
+    color: #000;
+}
+
 p { font-size: 1.5em; }
+
+.fa-star {
+    color: #FEC654;
+    padding-bottom: 10px;
+}
+
+/* === anchor effects === */
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00;
+    transform: scale(1.05);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
 /* === content and Nav area === */
 .content {
@@ -160,14 +203,56 @@ p { font-size: 1.5em; }
 .movie-detail-top {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;   
+    justify-content:flex-start;
+    text-align: center; 
+    gap: 4rem; 
+}
+
+.movie-detail-top h3 {
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 0.3rem;
 }
 
 .movie-detail-middle {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
+
+.movie-detail-top p,
+.movie-detail-middle p {
+    color:#111827;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.movie-detail-middle .add-movie,
+.movie-detail-middle .delete-movie {
+    color:#111827;
+    font-size: 2em;
+}
+
+.movie-detail-middle .add-movie:hover,
+.movie-detail-middle .delete-movie:hover {
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.movie-detail-bottom p {
+    color: #6B7280;
+    font-size: 1.4rem;
+    line-height: 2em;
+}
+
 
 /* .movie-detail {
     display: flex;
