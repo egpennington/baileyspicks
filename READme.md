@@ -71,5 +71,3 @@ Developed by pennington programming. For any questions or suggestions, feel free
 - [GitHub](https://github.com/egpennington)
 - [Email](mailto:egpennington@hotmail.com)
 - [Discord](emmettPenn23)
-
-In JavaScript, this.value refers to the current value of an element that the event is being fired on. When used inside an event listener, this refers to the element that is currently being interacted with (e.g., an input field)
