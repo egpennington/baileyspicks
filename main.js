@@ -10,7 +10,7 @@ function renderMovie(movieData) {
             <img class="moviePoster" src="${movieData.Poster}" alt="movie poster">
             <div class="movie-detail">
                 <div class="movie-detail-top">
-                    <h3 class="title">${movieData.Title}</h3>
+                    <h3 class="title" data-imdbid="${movieData.imdbID}">${movieData.Title}</h3>
                     <div class="rating">
                         <p><i class="fa-solid fa-star star"></i> ${movieData.Ratings[0]?.Value || "N/A"}</p>                          
                     </div>                                               
@@ -50,41 +50,39 @@ async function getMovieData(title) {
 function addMovieToLocalStorage() {
     document.querySelectorAll(".add-movie").forEach(button => {
         button.addEventListener("click", (e) => {
+            const movieElement = e.target.closest(".card-info");
 
-            const movieElement = e.target.closest(".card-info")
             if (!movieElement) {
                 console.error("Parent .card-info not found for the clicked button.");
-                return
+                return;
             }
 
             const movie = {
+                imdbID: movieElement.querySelector(".title").dataset.imdbid,
                 Title: movieElement.querySelector(".title").textContent,
                 Poster: movieElement.querySelector(".moviePoster").src,
                 Rating: movieElement.querySelector(".rating p").textContent,
                 Runtime: movieElement.querySelector(".length").textContent,
                 Genre: movieElement.querySelector(".genre").textContent,
                 Plot: movieElement.querySelector(".movie-detail-bottom p").textContent
+            };
+
+            let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+            const originalText = button.innerHTML;
+
+            if (!watchlist.some(watchlistMovie => watchlistMovie.imdbID === movie.imdbID)) {
+                watchlist.push(movie);
+                button.innerHTML = '<i class="fa-solid fa-circle-check fa-sm"></i> Added';
+                localStorage.setItem("watchlist", JSON.stringify(watchlist));
+            } else {
+                button.innerHTML = '<i class="fa-solid fa-circle-check fa-sm"></i> Already added';
             }
-
-            let watchlist = JSON.parse(localStorage.getItem("watchlist")) || []
-
-            if (!watchlist.some(watchlistMovie => watchlistMovie.Title === movie.Title)){
-                                    
-                watchlist.push(movie)
-                localStorage.setItem("watchlist", JSON.stringify(watchlist))
-                } else {
-                console.log("Movie is already in the watchlist.")                
-                }
-
-                const originalText = button.innerHTML
-                button.innerHTML = '<i class="fa-solid fa-circle-check fa-sm"></i> Added'
-
-                setTimeout(() => {
-                    button.innerHTML = originalText
-                }, 1500)
-
-            })            
-    })
+            setTimeout(() => {
+                button.innerHTML = originalText;
+            }, 1500);
+        });
+    });
 }
 
 function renderWatchlist(movieData) {
@@ -162,7 +160,7 @@ function removeMovieFromLocalStorage() {
             setTimeout(() => {
                 movieElement.remove();
                 button.innerHTML = originalText
-            }, 1500)
+            }, 500)
         })
     })
 }
