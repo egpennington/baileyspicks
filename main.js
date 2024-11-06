@@ -114,7 +114,13 @@ function renderWatchlist(movieData) {
 
 function loadWatchlist() {
     const watchlist = JSON.parse(localStorage.getItem("watchlist")) || []
-    watchlistDisplay.innerHTML = ""   
+    watchlistDisplay.innerHTML = ""
+    
+    if (watchlist.length === 0) {
+        watchlistDisplay.classList.remove('hide-icon')
+    } else {
+        watchlistDisplay.classList.add('hide-icon')
+    }
 
     watchlist.forEach(movieData => {
          watchlistDisplay.innerHTML += renderWatchlist(movieData)

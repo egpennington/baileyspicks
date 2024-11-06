@@ -32,6 +32,7 @@ h3 {
 
 p { font-size: 1.5em; }
 
+
 .fa-star {
     color: #FEC654;
     padding-bottom: 1em;
@@ -233,6 +234,11 @@ a:hover::after {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.8;
+}
+
+.hide-icon::before,
+.hide-icon::after {
+    content: none;
 }
 
 .card-info {

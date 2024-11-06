@@ -6,6 +6,8 @@
 
 This app is part of the **Scrimba Bootcamp** solo project for **Module 8**. It is built with **HTML**, **CSS**, and **JavaScript** and demonstrates how to work with APIs and Local Storage.
 
+- Scrimba fork [https://v1.scrimba.com/scrim/cof5c44e1b781bb0d685f9817]
+
 ## Features
 
 - **Movie Search (index.html)**: Users can search for movies by title using the OMDb API, which displays the results dynamically.
