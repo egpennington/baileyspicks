@@ -30,7 +30,7 @@ function renderMovie(movieData) {
 }
 
 async function getMovieData(title) {
-    const res = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${title}`)
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${title}`)
     const data = await res.json()
 
     document.getElementById("cards-display").innerHTML = ""
