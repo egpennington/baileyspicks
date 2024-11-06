@@ -3,7 +3,6 @@ const apiKey = `288650c8`
 let fetchTitle = ''
 const watchlistDisplay = document.getElementById("watchlist-display")
 const addMovie = document.querySelectorAll(".add-movie")
-console.log("Bailey, fetch!")
 
 function renderMovie(movieData) {    
     return `
@@ -20,7 +19,7 @@ function renderMovie(movieData) {
                     <p class="length">${movieData.Runtime}</p>
                     <p class="genre">${movieData.Genre}</p>
                     <button class="add-movie">
-                        <i class="fa-solid fa-circle-plus fa-sm"></i><span id="message"> Watchlist</span>
+                        <i class="fa-solid fa-circle-plus fa-sm"></i> Watchlist
                     </button>
                 </div>
                 <div class="movie-detail-bottom">
@@ -51,6 +50,7 @@ async function getMovieData(title) {
 function addMovieToLocalStorage() {
     document.querySelectorAll(".add-movie").forEach(button => {
         button.addEventListener("click", (e) => {
+
             const movieElement = e.target.closest(".card-info")
             if (!movieElement) {
                 console.error("Parent .card-info not found for the clicked button.");
@@ -75,6 +75,14 @@ function addMovieToLocalStorage() {
                 } else {
                 console.log("Movie is already in the watchlist.")                
                 }
+
+                const originalText = button.innerHTML
+                button.innerHTML = '<i class="fa-solid fa-circle-check fa-sm"></i> Added'
+
+                setTimeout(() => {
+                    button.innerHTML = originalText
+                }, 1500)
+
             })            
     })
 }
@@ -113,6 +121,8 @@ function loadWatchlist() {
     watchlist.forEach(movieData => {
          watchlistDisplay.innerHTML += renderWatchlist(movieData)
     })
+
+    removeMovieFromLocalStorage()
 }
 
 document.addEventListener("DOMContentLoaded", loadWatchlist)
@@ -126,3 +136,33 @@ document.querySelector('form').addEventListener('submit', function(e) {
     getMovieData(fetchTitle)
     this.reset()
 })
+
+function removeMovieFromLocalStorage() {
+    document.querySelectorAll(".delete-movie").forEach(button => {
+        button.addEventListener("click", (e) => {
+            console.log("Movie  deleted")
+            const movieElement = e.target.closest(".card-info")
+
+            if (!movieElement) {
+                console.error("Parent .card-info not found for the clicked button.")
+                return
+            }
+
+            let watchlist = JSON.parse(localStorage.getItem("watchlist")) || []
+
+            const movieTitle = movieElement.querySelector(".title").textContent
+            watchlist = watchlist.filter(movie => movie.Title !== movieTitle)
+
+            localStorage.setItem("watchlist", JSON.stringify(watchlist))
+
+            const originalText = button.innerHTML            
+            button.innerHTML = '<i class="fa-solid fa-circle-xmark fa-sm"></i> Deleted'
+            button.style.color = "red"
+
+            setTimeout(() => {
+                movieElement.remove();
+                button.innerHTML = originalText
+            }, 1500)
+        })
+    })
+}
