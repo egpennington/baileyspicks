@@ -182,14 +182,16 @@ a:hover::after {
 }
 
 /* === cards ===*/
-.cards-display {
+.cards-display,
+.watchlist-display {
     color: #333;
     background: #fff;
     margin-top: 3em;
     padding-top: 22em;
 }
 
-.cards-display::before {
+.cards-display::before,
+.watchlist-display::before {
     content: "\f008";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
@@ -218,6 +220,19 @@ a:hover::after {
 .cards-display.search-active::before,
 .cards-display.search-active::after {
     display: none;
+}
+
+.watchlist-display::after {
+    content: "Let's add some movies";
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #DFDDDD;
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
 }
 
 .card-info {
