@@ -1,5 +1,4 @@
-// 288650c8
-const apiKey = `288650c8`
+const apiKey = process.env.API_KEY
 let fetchTitle = ''
 const watchlistDisplay = document.getElementById("watchlist-display")
 const addMovie = document.querySelectorAll(".add-movie")
