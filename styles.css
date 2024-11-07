@@ -199,7 +199,7 @@ a:hover::after {
     font-size: 10rem;
     color: #DFDDDD;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.5;
@@ -224,7 +224,7 @@ a:hover::after {
 }
 
 .watchlist-display::after {
-    content: "Let's add some movies";
+    content: "add some movies";
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 2rem;
