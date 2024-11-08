@@ -2,6 +2,7 @@
 const apiKey = '288650c8'
 let fetchTitle = ''
 const addMovie = document.querySelectorAll(".add-movie")
+const searchMessage = document.getElementById("search-message")
 
 function renderMovie(movieData) {    
     return `
@@ -35,20 +36,30 @@ function renderMovie(movieData) {
 }
 
 async function getMovieData(title) {
-    const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${title}`)
-    const data = await res.json()
+    try{ 
+        const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${title}`)
+        const data = await res.json()
 
-    document.getElementById("cards-display").innerHTML = ""
+        document.getElementById("cards-display").innerHTML = ""
 
-    const movies = data.Search
+        const movies = data.Search
 
-    for (let movie of movies) {
-        const movieDetail = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
-        const movieData = await movieDetail.json()
-        
-        document.getElementById("cards-display").innerHTML += renderMovie(movieData)
+        for (let movie of movies) {
+            const movieDetail = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
+            const movieData = await movieDetail.json()
+            
+            document.getElementById("cards-display").innerHTML += renderMovie(movieData)
+        }
+        addMovieToLocalStorage()
+    } catch(err) {
+        console.log("something went wrong", err)
+        document.getElementById("cards-display").innerHTML = `
+            <div class="bg-image">
+                <svg class="background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M367.2 412.5L99.5 144.8C77.1 176.1 64 214.5 64 256c0 106 86 192 192 192c41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3C434.9 335.9 448 297.5 448 256c0-106-86-192-192-192c-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg><br>
+                <p id="search-message">...MOVIE NOT FOUND...</p>
+            </div>
+            `
     }
-    addMovieToLocalStorage()
 }
 
 function addMovieToLocalStorage() {

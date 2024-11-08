@@ -191,54 +191,26 @@ a:hover::after {
     padding-top: 22em;
 }
 
-.cards-display::before,
-.watchlist-display::before {
-    content: "\f008";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 10rem;
-    color: #DFDDDD;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.5;
+.background {
+    height: 200px;
+    opacity: 0.2;
 }
 
-.cards-display::after {
-    content: "Start Exploring";
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: #DFDDDD;
-    position: absolute;
-    top: 59%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.8;
+.bg-image {
+    color: #C3BCBC;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.cards-display.search-active::before,
-.cards-display.search-active::after {
-    display: none;
-}
-
-.watchlist-display::after {
-    content: "add some movies";
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: #DFDDDD;
-    position: absolute;
-    top: 59%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.8;
-}
-
-.hide-icon::before,
-.hide-icon::after {
-    content: none;
+.watchlist-bg {
+    border: 1px red solid;
+    background: red;
+    width: 300px;
+    height: 300px;
 }
 
 .card-info {
@@ -342,7 +314,6 @@ a:hover::after {
     .content .search-container {
         width: 100vw;
         left: 0.8em;
-
     }
 
     .content input[type=text] {
