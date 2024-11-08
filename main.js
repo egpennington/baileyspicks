@@ -100,7 +100,6 @@ function addMovieToLocalStorage() {
     });
 }
 
-
 document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
     const cardsDisplay = document.querySelector('.cards-display')
@@ -111,3 +110,6 @@ document.querySelector('form').addEventListener('submit', function(e) {
     this.reset()
 })
 
+document.getElementById("background-focus").addEventListener("click", function() {
+    document.getElementById("search-name").focus()
+})

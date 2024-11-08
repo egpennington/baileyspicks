@@ -191,6 +191,15 @@ a:hover::after {
     padding-top: 22em;
 }
 
+#background-focus {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#background-focus:hover {
+    transform: scale(1.1);
+}
+
 .background {
     height: 200px;
     opacity: 0.2;
@@ -207,8 +216,6 @@ a:hover::after {
 }
 
 .watchlist-bg {
-    border: 1px red solid;
-    background: red;
     width: 300px;
     height: 300px;
 }
