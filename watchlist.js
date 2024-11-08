@@ -1,6 +1,5 @@
 const watchlistDisplay = document.getElementById("watchlist-display")
 
-
 function renderWatchlist(movieData) {
     const ratingValue = movieData.Ratings?.[0]?.Value || "N/A"
     return `
@@ -17,8 +16,8 @@ function renderWatchlist(movieData) {
                     <div class="movie-detail-middle">
                         <p class="length">${movieData.Runtime}</p>
                         <p class="genre">${movieData.Genre}</p>
-                        <button class="add-movie">
-                            <i class="fa-solid fa-circle-plus fa-sm"></i> Watchlist
+                        <button class="delete-movie">
+                            <i class="fa-solid fa-circle-minus fa-sm"></i></i> Delete
                         </button>
                     </div>
                     <div class="movie-detail-bottom">
