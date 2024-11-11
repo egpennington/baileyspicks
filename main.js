@@ -16,7 +16,7 @@ function renderMovie(movieData) {
                     <div class="movie-detail-top">
                         <h3 class="title" data-imdbid="${movieData.imdbID}">${movieData.Title}</h3>
                             <div class="rating">
-                                <p><i class="fa-solid fa-star star"></i> ${movieData.Ratings[0]?.Value || "N/A"}</p>                          
+                                <i class="fa-solid fa-star star"></i> <p class="movie-rating">${movieData.Ratings[0]?.Value || "N/A"}<p>                          
                             </div>                                               
                     </div>
 
@@ -30,10 +30,9 @@ function renderMovie(movieData) {
                         <p class="length">${movieData.Runtime}</p>
                         <p class="genre">${movieData.Genre}</p>
                         <button class="add-movie">
-                            <i class="fa-solid fa-circle-plus fa-sm"></i> Watchlist
+                            <i class="fa-solid fa-circle-plus fa-sm"></i> Watchlist 
                         </button>
-                    </div>
-                                  
+                    </div>                                  
                 </div>
             </div>              
         </div>
@@ -81,7 +80,7 @@ function addMovieToLocalStorage() {
                 imdbID: movieElement.querySelector(".title").dataset.imdbid,
                 Title: movieElement.querySelector(".title").textContent,
                 Poster: movieElement.querySelector(".moviePoster").src,
-                Rating: movieElement.querySelector(".rating p").textContent,
+                Rating: movieElement.querySelector(".movie-rating").textContent,
                 Runtime: movieElement.querySelector(".length").textContent,
                 Genre: movieElement.querySelector(".genre").textContent,
                 Plot: movieElement.querySelector(".movie-detail-bottom p").textContent

@@ -1,7 +1,8 @@
 const watchlistDisplay = document.getElementById("watchlist-display")
 
+// const ratingValue = movieData.Ratings?.[0]?.Value || "N/A"
 function renderWatchlist(movieData) {
-    const ratingValue = movieData.Ratings?.[0]?.Value || "N/A"
+    
     return `
         <div class="card-info">
             <div class="card-info-display">
@@ -13,7 +14,7 @@ function renderWatchlist(movieData) {
                     <div class="movie-detail-top">
                         <h3 class="title" data-imdbid="${movieData.imdbID}">${movieData.Title}</h3>
                             <div class="rating">
-                                <p><i class="fa-solid fa-star star"></i> ${ratingValue || "N/A"}</p>                          
+                                <p><i class="fa-solid fa-star star"></i> ${movieData.Rating || "N/A"}</p>                          
                             </div>                                               
                     </div>
 
@@ -27,10 +28,9 @@ function renderWatchlist(movieData) {
                         <p class="length">${movieData.Runtime}</p>
                         <p class="genre">${movieData.Genre}</p>
                         <button class="delete-movie">
-                            <i class="fa-solid fa-circle-minus fa-sm"></i></i> Delete
+                            <i class="fa-solid fa-circle-minus fa-sm"></i></i><span> Delete</span>
                         </button>
-                    </div>
-                                  
+                    </div>                                  
                 </div>
             </div>              
         </div>
