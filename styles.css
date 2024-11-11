@@ -14,14 +14,14 @@ body {
 .main {
     background: #fff;
     height: 100vh;
-    max-width: 60em;
+    max-width: 37em;
     position: relative;
     margin: 0 auto;
 }
 
 /* === universal styles === */
 h1 { 
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 800;
     border-bottom: 1px #fff solid;
 }
@@ -43,7 +43,7 @@ p { font-size: 1.5em; }
 a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -74,12 +74,12 @@ a:hover::after {
 /* === content and Nav area === */
 .content {
     height: 22em;
-    width: 60em;
+    width: 37em;
     border: #fff solid 1px;
     position: relative;
     z-index: 1;
     position: fixed;
-    top: 0; 
+    top: 0;
 }
 
 .content::before {
@@ -112,10 +112,11 @@ a:hover::after {
 }
 
 .logo {
-    width: 6.5em;
+    width: 6.3em;
     background-color: #fff;
     border-radius: 6px;
     margin-right: 1em;
+    margin-left: 1em;
     grid-area: logo;
 }
 
@@ -129,6 +130,7 @@ a:hover::after {
 
 .tagLine p {
     font-style: italic;
+    font-size: 1rem;
 }
 
 /* === search bar area === */
@@ -142,12 +144,12 @@ a:hover::after {
 }
 
 .search-container form {
-    max-width: 49em;
+    max-width: 37em;
 }
 
 .search-box {
     position: relative;
-    display: inline-block;
+    display: inline;
 }
 
 .search-box i {
@@ -160,8 +162,8 @@ a:hover::after {
 }
 
 .content input[type=text] {
-    padding: 0.5em 3.35em;
-    font-size: 1.7rem;
+    padding: 0.5em 1em 0.5em 3em;
+    font-size: 1.3rem;
     border: none;
 }
 
@@ -171,9 +173,9 @@ a:hover::after {
 
 .content .search-container button {
     float: right;
-    padding: 0.5em 2.5em;
+    padding: 0.6em;
     background: #ddd;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     border: none;
     cursor: pointer;
 }
@@ -227,7 +229,7 @@ a:hover::after {
     justify-content: center;
     gap: 1rem;
     border-bottom: 1px solid #aaa;
-    padding: 2rem;
+    padding: 1rem;
     transition: box-shadow 0.3s ease;
 }
 
@@ -237,43 +239,49 @@ a:hover::after {
 }
 
 .card-info-display {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
     gap: 0;
     width: 100%;
 }
 
-.movie-detail-top {
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;
-    text-align: center; 
-    gap: 1rem; 
+.movie-title-rate {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    align-items: start;
 }
 
-.movie-detail-top h3 {
-    margin: 0;
-    flex: 1;
-    white-space: normal;
-    text-align: left;
+.moviePoster {
+    width: 100px;
+    grid-row: span 2;
+}
+
+.movie-detail-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.5em;
+}
+
+.title {
+    font-size: 1.5rem;
 }
 
 .rating {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr 1fr 1fr;
-    grid-template-areas: 
-        "title star tomo tomo tomo";
-    gap: 2em;
+    justify-self: end;
+    padding-top: 0.5em;
 }
 
-.title { grid-area: title;}
-.star { grid-area: star; }
-.tomo {  grid-area: tomo; }
+.movie-detail-bottom {
+    grid-column: 2;    
+}
+
+.movie-detail-bottom p {
+    font-size: 1.3rem;
+}
 
 .movie-detail-middle {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     gap: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -301,15 +309,6 @@ a:hover::after {
     opacity: 0.65;
 }
 
-.movie-detail-bottom p {
-    color: #6B7280;
-    font-size: 1.4rem;
-    line-height: 2em;
-}
-
-.moviePoster {
-    width: 100px;   
-}
 
 === mobile styles ===
 @media(max-width: 510px) {

@@ -5,14 +5,24 @@ function renderWatchlist(movieData) {
     return `
         <div class="card-info">
             <div class="card-info-display">
-                <img class="moviePoster" src="${movieData.Poster}" alt="movie poster">
-                <div class="movie-detail">
+                <div class="movie-title-rate">   
+                    <img class="moviePoster" src="${movieData.Poster !== 'N/A' ? movieData.Poster : `/images/placeholder.jfif`}" 
+                    alt="movie poster" 
+                    onerror="this.onerror=null; this.src='placeholder.jfif';">
+                                    
                     <div class="movie-detail-top">
                         <h3 class="title" data-imdbid="${movieData.imdbID}">${movieData.Title}</h3>
-                        <div class="rating">
-                            <p><i class="fa-solid fa-star star"></i> ${ratingValue || "N/A"}</p>                          
-                        </div>                                               
+                            <div class="rating">
+                                <p><i class="fa-solid fa-star star"></i> ${ratingValue || "N/A"}</p>                          
+                            </div>                                               
                     </div>
+
+                    <div class="movie-detail-bottom">
+                        <p>${movieData.Plot}</p>
+                    </div> 
+                </div>
+
+                <div class="movie-detail">
                     <div class="movie-detail-middle">
                         <p class="length">${movieData.Runtime}</p>
                         <p class="genre">${movieData.Genre}</p>
@@ -20,9 +30,7 @@ function renderWatchlist(movieData) {
                             <i class="fa-solid fa-circle-minus fa-sm"></i></i> Delete
                         </button>
                     </div>
-                    <div class="movie-detail-bottom">
-                        <p>${movieData.Plot}</p>
-                    </div>               
+                                  
                 </div>
             </div>              
         </div>
